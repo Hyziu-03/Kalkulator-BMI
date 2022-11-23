@@ -26,3 +26,6 @@ $$ BMI = \frac{masa \over wzrost^2} * 703 $$
 - Szymon Hyziak
 - Patrycja Wider
 - Sebastian Wojtas
+
+## Ryzyka chorobowe związane z nieprawidłowymi wartościami
+Wartość BMI jest pomocna w ocenie ryzyka wystąpienia chorób związanych z nadwagą takich jak miażdżyca lub choroba niedokrwienna serca. Im mniejsza wartość BMI, tym ryzyko wystąpienia chorób jest mniejsze.
