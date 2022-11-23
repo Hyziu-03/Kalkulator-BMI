@@ -12,3 +12,6 @@ Oznaczanie wskaźnika masy ciała ma znaczenie w ocenie zagrożenia chorobami zw
 - Szymon Hyziak
 - Patrycja Wider
 - Sebastian Wojtas
+
+## Ryzyka chorobowe związane z nieprawidłowymi wartościami
+Wartość BMI jest pomocna w ocenie ryzyka wystąpienia chorób związanych z nadwagą takich jak miażdżyca lub choroba niedokrwienna serca. Im mniejsza wartość BMI, tym ryzyko wystąpienia chorób jest mniejsze.
