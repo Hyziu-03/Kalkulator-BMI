@@ -40,12 +40,11 @@ Klasyfikacja poszerzona:
 35,0–39,99 – otyłość drugiego stopnia
 ≥ 40,0 – otyłość trzeciego stopnia
 
+Wartość BMI jest pomocna w ocenie ryzyka wystąpienia chorób związanych z nadwagą takich jak miażdżyca lub choroba niedokrwienna serca. Im mniejsza wartość BMI, tym ryzyko wystąpienia chorób jest mniejsze.
+
 ## Autorzy
 
 - Radosław Beta
 - Szymon Hyziak
 - Patrycja Wider
 - Sebastian Wojtas
-
-## Ryzyka chorobowe związane z nieprawidłowymi wartościami
-Wartość BMI jest pomocna w ocenie ryzyka wystąpienia chorób związanych z nadwagą takich jak miażdżyca lub choroba niedokrwienna serca. Im mniejsza wartość BMI, tym ryzyko wystąpienia chorób jest mniejsze.
