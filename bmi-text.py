@@ -1,5 +1,5 @@
 def main():
-    with open("test.csv", "r+") as file:
+    with open("people.csv", "r+") as file:
         # otwarcie pliku z danymi
         people = []
         i = 0
@@ -42,7 +42,7 @@ def main():
             file1.close()
             # otwarcie pliku, wpisanie wartości, które posłużą do wstawienia w wykres, zamknięcie pliku
 
-            file2 = open("bmi.txt", "a+")
+            file2 = open("bmi.csv", "a+")
             file2.write(f"{people[i][0]},{new_bmi}\n")
             file2.close()
             # otwarcie pliku, wpisanie imion i odpowiadającemu im bmi, zamknięcie pliku
