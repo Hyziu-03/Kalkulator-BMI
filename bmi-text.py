@@ -15,7 +15,7 @@ def main():
             w_p = w.split(" ")
             weight = float(w_p[0])
             weight_unit = w_p[1]
-            if weight_unit.lower() == "ib":
+            if "ib" in weight_unit.lower():
                 weight = pound_to_kg(weight)
             # zamiana z systemu imperialnego(funty) na normalny
 
@@ -23,13 +23,13 @@ def main():
             h_p = h.split(" ")
             height = float(h_p[0])
             height_unit = h_p[1]
-            if height_unit.lower() == "in":
-                height = inch_to_cm(height)
+            if "in" in height_unit.lower():
+                height = cm_to_m(inch_to_cm(height))
             # zamiana z systemu imperialnego(cale) na normalny
 
-            if height > 2.50:
+            if "cm" in height_unit.lower():
             # warunek być może trochę naiwny, ale ludzie nie mają z reguły więcej niż 2.5 metra wzrostu
-                height = m_to_cm(height)
+                height = cm_to_m(height)
             # zamiana wzrostu z centymetrów na metry
 
             bmi = float(weight / pow(height, 2))
@@ -61,8 +61,8 @@ def inch_to_cm(inch):
 # funkcja konwertująca cale na centymetry
 
 
-def m_to_cm(m):
-    return float(m / 100)
+def cm_to_m(cm):
+    return float(cm / 100)
 # funkcja konwertująca metry na centymetry
 
 
