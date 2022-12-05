@@ -12,24 +12,23 @@ def main():
         # szczytanie wartości z pliku, dodanie elementów do listy
 
         for i in range(len(people)):
-            w = people[i][1]
-            w_p = w.split(" ")
-            weight = float(w_p[0])
-            weight_unit = w_p[1]
+            people_weight = people[i][1]
+            weight_and_unit = people_weight.split(" ")
+            weight = float(weight_and_unit[0])
+            weight_unit = weaight_and_unit[1]
             if "ib" in weight_unit.lower():
                 weight = pound_to_kg(weight)
             # zamiana z systemu imperialnego(funty) na normalny
 
-            h = people[i][2]
-            h_p = h.split(" ")
-            height = float(h_p[0])
-            height_unit = h_p[1]
+            people_height = people[i][2]
+            height_and_unit = people_height.split(" ")
+            height = float(height_and_unit[0])
+            height_unit = height_and_unit[1]
             if "in" in height_unit.lower():
                 height = cm_to_m(inch_to_cm(height))
             # zamiana z systemu imperialnego(cale) na normalny
 
             if "cm" in height_unit.lower():
-            # warunek być może trochę naiwny, ale ludzie nie mają z reguły więcej niż 2.5 metra wzrostu
                 height = cm_to_m(height)
             # zamiana wzrostu z centymetrów na metry
 
@@ -49,7 +48,7 @@ def main():
             # otwarcie pliku, wpisanie imion i odpowiadającemu im bmi, zamknięcie pliku
 
             i += 1
-            # inkrementacja zmiennej i służącej do określenia indexu w liście
+            # inkrementacja zmiennej i służącej do określenia indeksu w liście
 
 
 def pound_to_kg(pound):
