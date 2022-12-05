@@ -15,7 +15,7 @@ def main():
             people_weight = people[i][1]
             weight_and_unit = people_weight.split(" ")
             weight = float(weight_and_unit[0])
-            weight_unit = weaight_and_unit[1]
+            weight_unit = weight_and_unit[1]
             if "ib" in weight_unit.lower():
                 weight = pound_to_kg(weight)
             # zamiana z systemu imperialnego(funty) na normalny
