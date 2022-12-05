@@ -1,4 +1,5 @@
 def main():
+    """ funkcja main """
     with open("people.csv", "r+") as file:
         # otwarcie pliku z danymi
         people = []
@@ -53,17 +54,17 @@ def main():
 
 def pound_to_kg(pound):
     return float(pound * 0.4535923)
-# funkcja konwertująca funty na kilogramy
+""" funkcja konwertująca funty na kilogramy """
 
 
 def inch_to_cm(inch):
     return float(inch * 2.54)
-# funkcja konwertująca cale na centymetry
+""" funkcja konwertująca cale na centymetry """
 
 
 def cm_to_m(cm):
     return float(cm / 100)
-# funkcja konwertująca metry na centymetry
+""" funkcja konwertująca metry na centymetry """
 
 
 if __name__ == '__main__':
