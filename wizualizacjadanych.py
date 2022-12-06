@@ -1,11 +1,9 @@
-<<<<<<< HEAD
-import seaborn as sns
 import pandas
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 # WCZYTYWANIE DANYCH
 
-file = open("dane.csv", "r")
+file = open("bmi.csv", "r")
 # przykładowy plik dla testów
 
 contents = file.read()
@@ -16,77 +14,55 @@ for i in range(records_size):
     records_list[i] = records_list[i].split(",")
 # wczytywanie danych z pliku do listy
 
+systems = []
 names = []
 weights = []
 heights = []
+bmis = []
+
 for i in range(records_size):
-    names.append(records_list[i][0])
-    weights.append(records_list[i][1])
-    heights.append(records_list[i][2])
+    systems.append(records_list[i][0])
+    names.append(records_list[i][1])
+    weights.append(records_list[i][2])
+    heights.append(records_list[i][3])
+    bmis.append(records_list[i][4])
 # przepisywanie danych z jednej listy do trzech
 # każda lista to osobne dane, każdy indeks odpowiada jednej osobie
-# to znaczy names[0], weights[0] i heights[0] odpowiadają tej samej osobie
+# to znaczy systems[0], names[0], weights[0], heights[0] i bmis[0]...
+# ...odpowiadają tej samej osobie
 
 # WIZUALIZACJA DANYCH
 
-sns.set_theme(style="whitegrid")
+#wczytanie danych
+people = pandas.read_csv("bmi.csv")
+#wykres robiony w pyplot, bez seaborna
+g = plt.bar(people["imie"], people["bmi"])
 
-people = pandas.read_csv("dane.csv")
+#ustawienie kolorów poszczególnych kolumn
+for i in range(len(people)):
+    color = ""
+    bmi = people["bmi"][i]
+    if bmi < 16:
+        color = "darkblue"
+    elif bmi < 17:
+        color = "blue"
+    elif bmi < 18.5:
+        color = "paleturquoise"
+    elif bmi < 25:
+        color = "lightgreen"
+    elif bmi < 30:
+        color = "khaki"
+    elif bmi < 35:
+        color = "gold"
+    elif bmi < 40:
+        color = "crimson"
+    else:
+        color = "firebrick"
+    g[i].set_color(color)
 
-g = sns.barplot(data=people, x=people.index, y="BMI", kind="bar",
-    errorbar="sd", palette="dark", alpha=.6, height=6)
-# o co chodzi, wyskakuje błąd ValueError: Could not interpret input 'species'
-
-g.set_axis_labels("", "Wartość BMI")
-g.set_xticklabels("", "Osoby badane")
-g.legend.set_title("")
-g.despine(left=True)
-
+#ustawienie żeby ładnie wyglądało
+plt.xticks(rotation=45)
+plt.tight_layout()
 plt.show()
-file.close()
-=======
-import seaborn as sns
-import pandas
 
-# WCZYTYWANIE DANYCH
-
-file = open("dane.csv", "r")
-# przykładowy plik dla testów
-
-contents = file.read()
-records_list = contents.split("\n")
-# \n to znak nowej linii
-records_size = len(records_list)
-for i in range(records_size):
-    records_list[i] = records_list[i].split(",")
-# wczytywanie danych z pliku do listy
-
-names = []
-weights = []
-heights = []
-for i in range(records_size):
-    names.append(records_list[i][0])
-    weights.append(records_list[i][1])
-    heights.append(records_list[i][2])
-# przepisywanie danych z jednej listy do trzech
-# każda lista to osobne dane, każdy indeks odpowiada jednej osobie
-# to znaczy names[0], weights[0] i heights[0] odpowiadają tej samej osobie
-
-# WIZUALIZACJA DANYCH
-
-sns.set_theme(style="whitegrid")
-
-people = pandas.read_csv("dane.csv")
-
-g = sns.catplot(
-    data=people, kind="bar",
-    x="species", y="wartość BMI", hue="sex",
-    errorbar="sd", palette="dark", alpha=.6, height=6
-)
-# o co chodzi, wyskakuje błąd ValueError: Could not interpret input 'species'
-g.despine(left=True)
-g.set_axis_labels("", "Wartość BMI")
-g.legend.set_title("")
-
-file.close()
->>>>>>> 3e38b9adf984a3f0f75adef4a55bf80a47b2a8c2
+# file.close()
