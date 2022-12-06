@@ -24,32 +24,30 @@ Istnieją dwie klasyfikacje naszej masy ciała.
 
 Klasyfikacja podstawowa:
 
-< 18,5 – niedowaga
-18,5–24,99 – waga prawidłowa
-≥ 25,0 – nadwaga
+- < 18,5 – niedowaga
+- 18,5–24,99 – waga prawidłowa
+- ≥ 25,0 – nadwaga
+
 Klasyfikacja poszerzona:
 
-< 16,0 – wygłodzenie
-16,0–16,99 – wychudzenie
-17,0–18,49 – niedowaga
-18,5–24,99 – waga prawidłowa
-25,0–29,99 – nadwaga
-30,0–34,99 – otyłość pierwszego stopnia
-35,0–39,99 – otyłość drugiego stopnia
-≥ 40,0 – otyłość trzeciego stopnia
+- < 16,0 – wygłodzenie
+- 16,0–16,99 – wychudzenie
+- 17,0–18,49 – niedowaga
+- 18,5–24,99 – waga prawidłowa
+- 25,0–29,99 – nadwaga
+- 30,0–34,99 – otyłość pierwszego stopnia
+- 35,0–39,99 – otyłość drugiego stopnia
+- ≥ 40,0 – otyłość trzeciego stopnia
 
 Wartość BMI jest pomocna w ocenie ryzyka wystąpienia chorób związanych z nadwagą takich jak miażdżyca lub choroba niedokrwienna serca. Im mniejsza wartość BMI, tym ryzyko wystąpienia chorób jest mniejsze.
 
-## Autorzy
+## Ryzyka chorobowe związane z nieprawidłowymi wartościami
+
+Wartość BMI jest pomocna w ocenie ryzyka wystąpienia chorób związanych z nadwagą takich jak miażdżyca lub choroba niedokrwienna serca. Im mniejsza wartość BMI, tym ryzyko wystąpienia chorób jest mniejsze.
+
+### Autorzy
 
 - Radosław Beta
 - Szymon Hyziak
 - Patrycja Wider
 - Sebastian Wojtas
-<<<<<<< Updated upstream
-=======
-
-## Ryzyka chorobowe związane z nieprawidłowymi wartościami
-
-Wartość BMI jest pomocna w ocenie ryzyka wystąpienia chorób związanych z nadwagą takich jak miażdżyca lub choroba niedokrwienna serca. Im mniejsza wartość BMI, tym ryzyko wystąpienia chorób jest mniejsze.
->>>>>>> Stashed changes
