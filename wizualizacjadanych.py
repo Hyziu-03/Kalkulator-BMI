@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # WCZYTYWANIE DANYCH
 
-file = open("bmi_output.csv", "r")
+file = open("bmi.csv", "r")
 # przykładowy plik dla testów
 
 contents = file.read()
@@ -36,7 +36,7 @@ for i in range(records_size):
 
 sns.set_theme(style="whitegrid")
 
-people = pandas.read_csv("bmi_output.csv")
+people = pandas.read_csv("bmi.csv")
 
 g = sns.catplot(
     data=people, kind="bar", errorbar="sd",
