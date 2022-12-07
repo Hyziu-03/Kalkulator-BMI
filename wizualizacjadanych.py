@@ -33,12 +33,12 @@ for i in range(records_size):
 
 # WIZUALIZACJA DANYCH
 
-#wczytanie danych
+# wczytanie danych
 people = pandas.read_csv("bmi.csv")
-#wykres robiony w pyplot, bez seaborna
+# wykres robiony w pyplot, bez seaborna
 g = plt.bar(people["imie"], people["bmi"])
 
-#ustawienie kolorów poszczególnych kolumn
+# ustawienie kolorów poszczególnych kolumn
 for i in range(len(people)):
     color = ""
     bmi = people["bmi"][i]
@@ -60,7 +60,7 @@ for i in range(len(people)):
         color = "firebrick"
     g[i].set_color(color)
 
-#ustawienie żeby ładnie wyglądało
+# ustawienie żeby ładnie wyglądało
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
