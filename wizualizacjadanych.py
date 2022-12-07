@@ -1,4 +1,3 @@
-import seaborn as sns
 import pandas
 import matplotlib.pyplot as plt
 
@@ -34,17 +33,36 @@ for i in range(records_size):
 
 # WIZUALIZACJA DANYCH
 
-sns.set_theme(style="whitegrid")
-
+# wczytanie danych
 people = pandas.read_csv("bmi.csv")
+# wykres robiony w pyplot, bez seaborna
+g = plt.bar(people["imie"], people["bmi"])
 
-g = sns.catplot(
-    data=people, kind="bar", errorbar="sd",
-    x="imie", y="bmi",
-    palette="dark", alpha=.6, height=6
-)
-g.despine(left=True)
-g.set_axis_labels("Osoba", "Wartość BMI")
+# ustawienie kolorów poszczególnych kolumn
+for i in range(len(people)):
+    color = ""
+    bmi = people["bmi"][i]
+    if bmi < 16:
+        color = "darkblue"
+    elif bmi < 17:
+        color = "blue"
+    elif bmi < 18.5:
+        color = "paleturquoise"
+    elif bmi < 25:
+        color = "lightgreen"
+    elif bmi < 30:
+        color = "khaki"
+    elif bmi < 35:
+        color = "gold"
+    elif bmi < 40:
+        color = "crimson"
+    else:
+        color = "firebrick"
+    g[i].set_color(color)
+
+# ustawienie żeby ładnie wyglądało
+plt.xticks(rotation=45)
+plt.tight_layout()
 plt.show()
 
-file.close()
+# file.close()

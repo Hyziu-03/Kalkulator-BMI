@@ -1,4 +1,4 @@
-f = open("bmi_output.csv", "a")  # otwiera się plik tekstowy o nazwie bmi_output
+f = open("bmi.csv", "a")  # otwiera się plik tekstowy o nazwie bmi_output
 
 
 def imperialne():  # funkcja dla wartości imperialnych
@@ -101,3 +101,4 @@ if q == 'imperialnych':
     imperialne()
 if q == 'metrycznych':
     metryczne()
+
