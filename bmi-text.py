@@ -36,7 +36,7 @@ def main():
             new_bmi = str(f"{bmi:.2f}")
             # ograniczenie cyfr po przecinku do dwóch
 
-            file1 = open("bmi.csv", "a+")
+            file1 = open("people_bmi.csv", "a+")
             file1.write(f"met,{people_name},{weight:.2f},{height:.2f},{new_bmi}\n")
             file1.close()
             # otwarcie pliku, wpisanie wartości, które posłużą do wstawienia w wykres, zamknięcie pliku
