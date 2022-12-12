@@ -8,7 +8,11 @@ def main():
         # otworzenie pliku z danymi
         reader = csv.DictReader(file)
         # szczytanie wartości z pliku używając funkcji DictReader(szczytanie zawartości jako słowników)
-
+        list_of_weights = []
+        list_of_heights = []
+        list_of_bmi = []
+        list_of_names = []
+        # deklaracja list
         for people in reader:
             people_name = people["name"]
             people_weight = people["weight"]
@@ -18,7 +22,6 @@ def main():
             if "ib" in weight_unit.lower():
                 weight = pound_to_kg(weight)
             # zamiana z systemu imperialnego(funty) na normalny
-
             people_height = people["height"]
             height_and_unit = people_height.split(" ")
             height = float(height_and_unit[0])
@@ -35,11 +38,27 @@ def main():
             # obliczenie wartości bmi
             new_bmi = str(f"{bmi:.2f}")
             # ograniczenie cyfr po przecinku do dwóch
+            list_of_weights.append(f"{weight:.2f}")
+            list_of_heights.append(f"{height:.2f}")
+            list_of_bmi.append(new_bmi)
+            list_of_names.append(people_name)
 
-            file1 = open("people_bmi.csv", "a+")
-            file1.write(f"met,{people_name},{weight:.2f},{height:.2f},{new_bmi}\n")
-            file1.close()
-            # otwarcie pliku, wpisanie wartości, które posłużą do wstawienia w wykres, zamknięcie pliku
+        with open("people_bmi.csv", "a+") as file1:
+            writer = csv.DictWriter(file1, fieldnames=["system", "name", "weight", "height", "bmi"])
+            writer.writeheader()
+            for i in range(20):
+                writer.writerow({"system": "met", "name": list_of_names[i],
+                                 "weight": list_of_weights[i], "height": list_of_heights[i], "bmi": list_of_bmi[i]})
+                i += 1
+        # wpisanie danych o osobach do pliku używając funckji DictWriter
+        # niestety funkcja ta automatycznie dodaje nowe linie na koniec, dlatego też potrzebne będzie ich usunięcie
+        with open("people_bmi.csv", "r") as file2:
+            for line in file2:
+                if line == "\n":
+                    line = line.replace("\n", "")
+                with open("proper_bmi.csv", "a") as file3:
+                    file3.write(line)
+        # usunięcie zbędnych linii w pliku csv
 
 
 def pound_to_kg(pound):
