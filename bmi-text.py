@@ -44,11 +44,17 @@ def main():
             list_of_names.append(people_name)
 
         with open("people_bmi.csv", "a+") as file1:
-            writer = csv.DictWriter(file1, fieldnames=["system", "name", "weight", "height", "bmi"])
+            writer = csv.DictWriter(
+                file1, fieldnames=["system", "imie", "wzrost", "waga", "bmi"])
             writer.writeheader()
             for i in range(20):
-                writer.writerow({"system": "met", "name": list_of_names[i],
-                                 "weight": list_of_weights[i], "height": list_of_heights[i], "bmi": list_of_bmi[i]})
+                writer.writerow({
+                    "system": "met", 
+                    "imie": list_of_names[i],
+                    "wzrost": list_of_heights[i], 
+                    "waga": list_of_weights[i], 
+                    "bmi": list_of_bmi[i]
+                })
                 i += 1
         # wpisanie danych o osobach do pliku używając funckji DictWriter
         # niestety funkcja ta automatycznie dodaje nowe linie na koniec, dlatego też potrzebne będzie ich usunięcie
@@ -56,7 +62,7 @@ def main():
             for line in file2:
                 if line == "\n":
                     line = line.replace("\n", "")
-                with open("proper_bmi.csv", "a") as file3:
+                with open("bmi.csv", "a") as file3:
                     file3.write(line)
         # usunięcie zbędnych linii w pliku csv
 
