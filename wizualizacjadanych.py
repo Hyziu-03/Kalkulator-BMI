@@ -36,7 +36,7 @@ for i in range(records_size):
 # wczytanie danych
 people = pandas.read_csv("bmi.csv")
 # wykres robiony w pyplot, bez seaborna
-g = plt.bar(people["imie"], people["bmi"])
+g = plt.bar(people["name"], people["bmi"])
 
 # ustawienie kolorów poszczególnych kolumn
 for i in range(len(people)):
