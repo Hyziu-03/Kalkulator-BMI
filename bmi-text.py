@@ -14,7 +14,7 @@ def main():
         list_of_names = []
         # deklaracja list
         for people in reader:
-            people_name = people["name"]
+            people_name = people["imie"]
             people_weight = people["weight"]
             weight_and_unit = people_weight.split(" ")
             weight = float(weight_and_unit[0])
